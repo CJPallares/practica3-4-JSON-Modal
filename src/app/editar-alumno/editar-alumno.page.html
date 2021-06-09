@@ -9,10 +9,7 @@
 </ion-header>
 
 <ion-content>
-  <form
-    [formGroup]="validations_form"
-    (ngSubmit)="onSubmit(validations_form.value)"
-  >
+  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
       <ion-label position="floating" color="primary">first_name</ion-label>
 
@@ -52,34 +49,19 @@
       <label>
         <span> Male</span>
 
-        <input
-          type="radio"
-          value="Male"
-          formControlName="gender"
-          [checked]="validations_form.get('gender').value == 'Male'"
-        />
+        <input type="radio" value="Male" formControlName="gender"
+          [checked]="validations_form.get('gender').value == 'Male'" />
       </label>
 
       <label>
         <span> Female</span>
 
-        <input
-          type="radio"
-          value="Female"
-          formControlName="gender"
-          [checked]="validations_form.get('gender').value == 'Female'"
-        />
+        <input type="radio" value="Female" formControlName="gender"
+          [checked]="validations_form.get('gender').value == 'Female'" />
       </label>
     </ion-item>
 
-    <ion-button
-      color="primary"
-      class="submit-btn"
-      expand="block"
-      type="submit"
-      [disabled]="!validations_form.valid"
-    >
-      Submit data</ion-button
-    >
+    <ion-button color="primary" class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">
+      Submit data</ion-button>
   </form>
 </ion-content>

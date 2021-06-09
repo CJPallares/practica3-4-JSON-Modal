@@ -10,8 +10,7 @@ import { Alumno } from '../modelo/alumno';
 })
 export class EditarAlumnoPage implements OnInit {
 
-  // Data passed in by componentProps
-  @Input() alumnoJson;
+  @Input() alumnoJson; // Data passed in by componentProps
   alumno: Alumno;
   validations_form: FormGroup;
 
@@ -19,7 +18,7 @@ export class EditarAlumnoPage implements OnInit {
     public modalCtrl: ModalController) { }
 
   ngOnInit() {
-    this.alumno = JSON.parse(this.alumnoJson);
+    this.alumno = JSON.parse(this.alumnoJson); //convierte el string de JSON en un objeto con el parse. componentProps del modal lo manda aquí.
     this.validations_form = this.formBuilder.group({
       id: new FormControl(this.alumno.id),
       first_name: new FormControl(this.alumno.first_name, Validators.compose([
